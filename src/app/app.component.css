@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+}
+
+.auteurPrincipal {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 3px;
+  background-color: white;
+  text-decoration-color: black;
+  font-family: "Aileron", "Arial Bold", Gadget, sans-serif;
+  font-weight: bold;
+  border: 2px solid black;
+  min-width: 100px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* CSS repère */
+.curseurV {
+  position: fixed;
+  width: 1px;
+  height: 100%;
+  background-color: black;
+  z-index: -2;
+}
+
+.curseurH {
+  position: fixed;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  z-index: -2;
+}
+
+.intersection {
+  position: fixed;
+  height: 10px;
+  width: 10px;
+  background-color: rgb(255, 77, 0);
+  border-radius: 5px;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -2;
+}
+
+/* CSS logo */
+.conteneur {
+  position: fixed;
+  transition: opacity 1s;
+  z-index: 3;
+}
+
+#logo {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* CSS Apparition logo */
+#boutonLogo {
+  cursor: pointer;
+  position: fixed;
+  top: 0px;
+  left: 100%;
+  height: 30px;
+  width: 50px;
+  transform: translateX(-100%);
+  z-index: 3;
+}
+
+#boutonLogo img {
+  position: relative;
+  top: -20px;
+  left: +5px;
+}
+
+/* CSS Apparition liste */
+#boutonListe {
+  cursor: pointer;
+  position: fixed;
+  top: 100%;
+  left: 0%;
+  height: 30px;
+  width: 50px;
+  transform: translateY(-100%);
+  z-index: 3;
+}
+
+#boutonListe img {
+  position: relative;
+  top: -10px;
+  left: 10px;
+}
+
+/* CSS Liste Auteurs */
+.listeAuteur {
+  position: fixed;
+  top: 100%;
+  left: 0%;
+  background-color: black;
+  padding: 5px;
+  z-index: 4;
+  transition: 1s;
+}
+
+.listeAuteur li {
+  margin: 5px;
+}
+
+.listeAuteur a {
+  text-decoration: none;
+  color: white;
+  font-family: "Aileron", "Arial Bold", Gadget, sans-serif;
+  transition: .5s;
+}
+
+.listeAuteur a:hover {
+  color: gray;
+  transition: .5s;
+}
+
+/* CSS bouton catalogue */
+#download {
+  position: fixed;
+  top: 100%;
+  left: 100%;
+  transform: translateX(-130%) translateY(-85%);
+}

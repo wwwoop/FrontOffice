@@ -1,0 +1,10 @@
+<div class="Auteur" [style.left]="x" [style.top]="y" (window:scroll)="retourneAuteur()" (window:resize)="retourneAuteur()" (window:load)="retourneAuteur()">
+	<p class="nom" [id]="idAut">{{ nom }}</p>
+
+	<p class="desc" [style.left]="leftDesc()" [style.top]="topDesc()" [id]="idDesc">
+	  <span class="titre">{{ titre }}</span>
+	  <br/>
+	  <br/>
+	      {{ description }}
+	</p>
+</div>

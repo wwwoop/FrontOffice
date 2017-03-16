@@ -1,0 +1,13 @@
+{
+  "auteurs": [{"x": "500px",
+              "y": "200px",
+              "nom": "Axel Besson",
+              "titre": "Carrossier",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+
+              {"x": "100px",
+              "y": "700px",
+              "nom": "Aurore Pinho",
+              "titre": "Ulysse et Cyclope",
+              "description": "Ce projet, illustre d’une manière différente l’histoire d’Ulysse. Ulysse n’est plus un homme, mais une femme, et voyage avec ses compagnons sans sexe distinct. L'illustratrice a fait le choix de l’Odyssée car c'est \"l’un des livres les plus chouettes et fascinant que j’eus l’occasion de lire à l'école.\""}]
+}

@@ -1,0 +1,74 @@
+<div *ngIf="nbGal == 0">
+  <div class="loading">
+    <img src="load.gif" alt="Chargement en cours"/>
+  </div>
+</div>
+
+<div *ngIf="nbGal > 0">
+  <!-- On affiche le nom de l'auteur principal -->
+  <p class="auteurPrincipal">
+    {{ auteurPrincipal }}
+  </p>
+
+
+
+  <!-- On affiche le curseur vertical -->
+  <div class="curseurV" [style.left]="positionCurseurVertical()"></div>
+
+  <!-- On affiche le curseur horizontale -->
+  <div class="curseurH" [style.top]="positionCurseurHorizontal()"></div>
+
+  <!-- On affiche l'intersection des curseurs -->
+  <div class="intersection" [style.left]="positionCurseurVertical()" [style.top]="positionCurseurHorizontal()"></div>
+
+
+
+  <!-- On affiche le logo -->
+  <div class="conteneur" [style.opacity]="opacityLogo" [style.top]="topLogo" [style.height]="dimLogo" [style.width]="dimLogo" (click)="changeOpacity()" (webkitTransitionEnd)="masquerLogo()" (transitionend)="masquerLogo()" (oTransitionEnd)="masquerLogo()">
+    <img id="logo" src="logo.gif" height="590px" width="720px"/>
+  </div>
+  <div id="boutonLogo" (click)="changeOpacity()"><img src="Onglets/woop.svg" height="100px" width="100px"/></div>
+
+
+
+  <!-- Affichage des Galeries -->
+  <div *ngIf="afficherGaleries()">
+    <div *ngFor="let galerie of infoGaleries; let i=index">
+      <obj-galerie [initX]="getPx(galerie.x)" [initY]="getPx(galerie.y)" [auteur]="galerie.auteur" [numGalerie]="i" [height]="infoDescriptionGalerie[i].height" [width]="infoDescriptionGalerie[i].width" [photos]="infoDescriptionGalerie[i].photos" [xFleche]="infoDescriptionGalerie[i].xFleche" [yFleche]="infoDescriptionGalerie[i].yFleche" [change]="detectChange" (auteurVisible)="afficheAuteur(i, $event)">
+        <p>Ouverture de la galerie en cours...</p>
+      </obj-galerie>
+    </div>
+  </div>
+
+
+
+  <!-- Affichage des auteurs -->
+  <div *ngFor="let auteur of infoAuteurs; let i=index">
+    <obj-auteur [x]="auteur.x" [y]="auteur.y" [nom]="auteur.nom" [titre]="auteur.titre" [description]="auteur.description" [num]="i" (auteurVisible)="afficheAuteur(nbGal + i, $event)">
+      <p>Chargement des informations de l'auteur...</p>
+    </obj-auteur>
+  </div>
+
+
+
+  <!-- On affiche la liste des auteurs en lien -->
+  <div id="boutonListe" (click)="afficherListe()"><img src="Onglets/liste.svg" height="50px" width="50px"/></div>
+  <ul class="listeAuteur" [style.transform]="decalageListeAuteurs()" (click)="afficherListe()">
+    <li *ngFor="let auteur of infoAuteurs; let i=index"><a (click)="scrollToElement(getIdAuteur(i))">{{ auteur.nom }}</a></li>
+  </ul>
+
+
+
+  <!-- Bouton Catalogue -->
+  <a id="download" href="catalogue.pdf" target="_blank">
+    <img src="Onglets/catalogue.svg" height="45px" width="45px"/>
+  </a>
+
+
+
+  <!-- Ensemble des Terres -->
+  <div *ngFor="let planete of infoPlanetes">
+    <obj-terre [x]="planete.x" [y]="planete.y" [autId]="planete.id"></obj-terre>
+  </div>
+
+</div>

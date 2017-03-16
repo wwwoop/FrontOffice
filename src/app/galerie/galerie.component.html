@@ -1,0 +1,16 @@
+<div class="Galerie" [id]="id" [style.margin-left]="x" [style.margin-top]="y" [style.width]="width" [style.height]="height">
+
+  <!-- On affiche les images que si elles apparaissent à l'écran -->
+  <div *ngIf="estVisible() || !estReduit">
+    <div *ngFor="let image of photos; let i=index">
+      <img [src]="returnData(image.url)" alt="Chargement..." [style.width]="width" [style.height]="height" [style.top]="posTop(i)" [style.left]="posLeft(i)" [style.z-index]="zIndex()"/>
+    </div>
+  </div>
+
+  <!-- On affiche les flèches si elles sont utiles -->
+  <div *ngIf="flecheVisible">
+    <div class="fleche" height="30px" width="30px" [style.top]="flecheTop()" [style.left]="flecheLeft()" [style.z-index]="zIndex()" [style.transform]="rotation()" (click)="deploy()">
+      <img [src]="urlFleche" alt="Deploiement" height="30px" width="30px"/>
+    </div>
+  </div>
+</div>

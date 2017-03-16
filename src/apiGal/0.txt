@@ -1,0 +1,21 @@
+{
+  "width":"188px",
+  "height": "125px",
+  "photos": [{"x": 0,
+            "y": 0,
+            "url": "apiGal/0/0.jpg"},
+
+            {"x": 0,
+            "y": 1,
+            "url": "apiGal/0/1.jpg"},
+
+            {"x": 1,
+            "y": 0,
+            "url": "apiGal/0/2.jpg"},
+
+            {"x": 1,
+            "y": 1,
+            "url": "apiGal/0/3.jpg"}],
+  "xFleche": 2,
+  "yFleche": 2
+}

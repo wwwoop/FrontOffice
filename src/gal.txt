@@ -1,0 +1,13 @@
+{
+	"gal": [{"x": "200px",
+		"y": "200px",
+		"auteur": "Aurore Pinho"},
+
+		{"x": "400px",
+		"y": "500px",
+		"auteur": "Paul"},
+
+		{"x": "1200px",
+		"y": "300px",
+		"auteur": "Paul"}]
+}
